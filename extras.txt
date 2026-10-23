@@ -1,0 +1,17 @@
+React hooks: not magic, just arrays
+https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e
+
+JavaScript arrow functions:
+https://javascript.info/arrow-functions-basics
+
+Everything you need to know about Design Systems
+https://uxdesign.cc/everything-you-need-to-know-about-design-systems-54b109851969
+
+There are FIVE levels of UI skill.
+https://michalmalewicz.medium.com/there-are-five-levels-of-ui-skill-62e0e7700855
+
+use-immer
+https://github.com/immerjs/use-immer
+
+uuid
+https://www.npmjs.com/package/uuid
