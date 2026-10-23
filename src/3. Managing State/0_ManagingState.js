@@ -9,7 +9,9 @@ components.
 /* Note how the following code uses the status state variable to determine whether to enable or disable the submit button, 
 and whether to show the success message instead.*/
 
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
+import AddTask from './AddTask.js';
+import TaskList from './TaskList.js';
 
 export default function ReactingToInputWithState() {
   const [answer, setAnswer] = useState('');
@@ -127,7 +129,7 @@ export function StateStructureRedundant() {
 }
 
 // You can remove it and simplify the code by calculating fullName while the component is rendering:
-export default function StateStructure() {
+export function StateStructure() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
@@ -199,7 +201,7 @@ export function Chat({ contact }) {
     );
 }
 
-export default function ContactList({
+export function ContactList({
     selectedContact,
     contacts,
     onSelect
@@ -220,7 +222,7 @@ export default function ContactList({
       </section>
     );
 }
-  
+
 export function Messenger() {
     const [to, setTo] = useState(contacts[0]);
     return (
@@ -248,11 +250,8 @@ consolidate all the state update logic outside your component in a single functi
 become concise because they only specify the user “actions”. At the bottom of the file, the reducer function specifies how 
 the state should update in response to each action!
 */
-import { useReducer } from 'react';
-import AddTask from './AddTask.js';
-import TaskList from './TaskList.js';
 
-export default function TaskApp() {
+export function TaskApp() {
   const [tasks, dispatch] = useReducer(
     tasksReducer,
     initialTasks
