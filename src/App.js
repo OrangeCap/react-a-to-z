@@ -2,30 +2,30 @@ import "./App.css";
 import React from "react";
 import Game from "./Tutorial_tic-tac-toe/tic-tac-toe/tic-tac-toe";
 import Product from "./Thinking in React/ThinkingInReact";
-import Profile from "./Describing the UI/5_PassingPropsToAComponent";
-import List, { FilteredList } from "./Describing the UI/7_RenderingList";
+import Profile from "./1. Describing the UI/5_PassingPropsToAComponent";
+import List, { FilteredList } from "./1. Describing the UI/7_RenderingList";
 import Gallery, {
   Form,
   Counter,
   Counter2,
   ObjectUpdate,
-} from "./Adding Interactivity/0_AddingInteractivity";
-import Toolbar from "./Adding Interactivity/1_RespondingToEvents";
-import Clock from "./Adding Interactivity/3_RenderAndCommit";
+} from "./2. Adding Interactivity/0_AddingInteractivity";
+import Toolbar from "./2. Adding Interactivity/1_RespondingToEvents";
+import Clock from "./2. Adding Interactivity/3_RenderAndCommit";
 import FormState, {
   CounterState,
   CounterStateOverTime,
   CounterStateOverTimeAsync,
   FormHello,
-} from "./Adding Interactivity/4_StateAsASnapshot";
-import CounterMultiple from "./Adding Interactivity/5_QueueingASeriesOfStateUpdates";
+} from "./2. Adding Interactivity/4_StateAsASnapshot";
+import CounterMultiple from "./2. Adding Interactivity/5_QueueingASeriesOfStateUpdates";
 import MovingDotMutatedState, {
   MovingDot,
   FormMutated,
   Form as FormNonMutated,
   FormNestedUpdate,
   FormImmer,
-} from "./Adding Interactivity/6_UpdatingObjectsInState";
+} from "./2. Adding Interactivity/6_UpdatingObjectsInState";
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
       <div className="App">
         <Game />
         <br />
+        <hr />
         <Product />
         <br />
         <Profile />
