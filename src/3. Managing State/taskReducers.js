@@ -22,7 +22,7 @@ export default function taskReducers(tasks, action) {
         }
       });
     }
-    case "default": {
+    default: {
       throw Error("Unknown action: " + action.type);
     }
   }

@@ -21,6 +21,8 @@ inside React. React associates each piece of state it’s holding with the corre
 in the UI tree.
 */
 import { useState } from "react";
+import Chat from './Chat.js';
+import ContactList from './ContactList.js';
 
 export function App() {
   const counter = <Counter />;
@@ -65,7 +67,7 @@ both counters, then remove the second component by unchecking “Render the seco
 by ticking it again:
 */
 
-export function App() {
+export function App2() {
   const [showB, setShowB] = useState(true);
   return (
     <div>
@@ -85,7 +87,7 @@ export function App() {
   );
 }
 
-function Counter() {
+function Counter2() {
   const [score, setScore] = useState(0);
   const [hover, setHover] = useState(false);
 
@@ -118,7 +120,7 @@ function Counter() {
 /*
 
 */
-export function App() {
+export function App3() {
   const [isFancy, setIsFancy] = useState(false);
   return (
     <div>
@@ -137,7 +139,7 @@ export function App() {
   );
 }
 
-function Counter({ isFancy }) {
+function Counter3({ isFancy }) {
   const [score, setScore] = useState(0);
   const [hover, setHover] = useState(false);
 
@@ -171,7 +173,7 @@ PITFALL:
 Remember that it’s the position in the UI tree—not in the JSX markup—that matters to React! This component has two return 
 clauses with different <Counter /> JSX tags inside and outside the if:
 */
-export function App() {
+export function App4() {
   const [isFancy, setIsFancy] = useState(false);
   if (isFancy) {
     return (
@@ -207,7 +209,7 @@ export function App() {
   );
 }
 
-function Counter({ isFancy }) {
+function Counter4({ isFancy }) {
   const [score, setScore] = useState(0);
   const [hover, setHover] = useState(false);
 
@@ -244,7 +246,7 @@ next renders, regardless of how you structure your logic.
 Here, you switch between different component types at the same position. Initially, the first child of the <div> contained 
 a Counter. But when you swapped in a p, React removed the Counter from the UI tree and destroyed its state.
 */
-export default function App() {
+export default function App5() {
   const [isPaused, setIsPaused] = useState(false);
   return (
     <div>
@@ -263,7 +265,7 @@ export default function App() {
   );
 }
 
-function Counter() {
+function Counter5() {
   const [score, setScore] = useState(0);
   const [hover, setHover] = useState(false);
 
@@ -287,7 +289,7 @@ function Counter() {
 Also, when you render a different component in the same position, it resets the state of its entire subtree. To see how 
 this works, increment the counter and then tick the checkbox.
 */
-export default function App() {
+export function App6() {
     const [isFancy, setIsFancy] = useState(false);
     return (
       <div>
@@ -314,7 +316,7 @@ export default function App() {
     );
   }
   
-  function Counter({ isFancy }) {
+  function Counter6({ isFancy }) {
     const [score, setScore] = useState(0);
     const [hover, setHover] = useState(false);
   
@@ -406,7 +408,7 @@ export function Scoreboard() {
   );
 }
 
-function Counter({ person }) {
+function Counter7({ person }) {
   const [score, setScore] = useState(0);
   const [hover, setHover] = useState(false);
 
@@ -443,7 +445,7 @@ There are two ways to reset state when switching between them:
 // Option 1: Rendering a component in different positions
 // If you want these two Counters to be independent, you can render them in two different positions.
 
-export function Scoreboard() {
+export function Scoreboard2() {
   const [isPlayerA, setIsPlayerA] = useState(true);
   return (
     <div>
@@ -462,7 +464,7 @@ export function Scoreboard() {
   );
 }
 
-function Counter({ person }) {
+function Counter8({ person }) {
   const [score, setScore] = useState(0);
   const [hover, setHover] = useState(false);
 
@@ -506,7 +508,7 @@ counter—for example, Taylor’s counter. This way, React will know Taylor’s 
 */
 
 // In this example, the two <Counter />s don’t share state even though they appear in the same place in JSX:
-export default function Scoreboard() {
+export function Scoreboard3() {
   const [isPlayerA, setIsPlayerA] = useState(true);
   return (
     <div>
@@ -524,7 +526,7 @@ export default function Scoreboard() {
   );
 }
 
-function Counter({ person }) {
+function Counter9({ person }) {
   const [score, setScore] = useState(0);
   const [hover, setHover] = useState(false);
 
@@ -565,10 +567,7 @@ Remember that keys are not globally unique. They only specify the position withi
 
 //-----------------------------------------Resetting a form with a key-----------------------------------------------
 // Resetting state with a key is particularly useful when dealing with forms.
-import Chat from './Chat.js';
-import ContactList from './ContactList.js';
-
-export default function Messenger() {
+export function Messenger() {
   const [to, setTo] = useState(contacts[0]);
   return (
     <div>
